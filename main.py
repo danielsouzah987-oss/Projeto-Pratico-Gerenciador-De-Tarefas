@@ -65,39 +65,27 @@ def listar_tarefas():
 # =====================================================================
 
 def concluir_tarefa(indice):
-    """
-    Marca como concluída a tarefa na posição `indice` (começando em 1).
-
-    Regras:
-        - Se `indice` for menor que 1 ou maior que o tamanho da lista,
-          exiba uma mensagem de erro ("Numero de tarefa invalido.") e
-          pare a função (return).
-        - Caso contrário, altere a chave "concluida" da tarefa para True
-          e exiba uma mensagem confirmando a conclusão.
-
-    Lembre-se: o índice exibido para o usuário começa em 1, mas listas em
-    Python começam em 0. Você vai precisar ajustar isso (indice - 1).
-    """
-    # TODO (Aula 2): valide o índice recebido
-    # TODO (Aula 2): marque a tarefa como concluída
-    # TODO (Aula 2): exiba uma mensagem de confirmação
+    if indice < 1 or indice > len (tarefas):
+        print ("numero de tarefas invalido")
+        return
+    else:
+        for index, itens in enumerate(tarefas, start=1):
+            if index == indice:
+                itens ['concluida'] = True
+                print(f"Tarefa{itens['titulo']}concluida")
+   
     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
     pass
 
 
 def remover_tarefa(indice):
-    """
-    Remove da lista a tarefa na posição `indice` (começando em 1).
-
-    Regras:
-        - Mesma validação de índice de concluir_tarefa().
-        - Use o método tarefas.pop(indice - 1) para remover e guardar
-          a tarefa removida ao mesmo tempo.
-        - Exiba uma mensagem confirmando qual tarefa foi removida.
-    """
-    # TODO (Aula 2): valide o índice recebido
-    # TODO (Aula 2): remova a tarefa da lista usando pop()
-    # TODO (Aula 2): exiba uma mensagem de confirmação
+    if indice < 1 or indice > len (tarefas):
+        print ("o numero de tarefas invalido")
+    else:
+        for index, itens in enumerate(tarefas, start=1):
+            tarefas.pop(index-1)
+            print("tarefa removida")
+    
     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
     pass
 
