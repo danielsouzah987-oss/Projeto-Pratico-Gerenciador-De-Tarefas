@@ -93,7 +93,7 @@ def remover_tarefa(indice):
         - Mesma validação de índice de concluir_tarefa().
         - Use o método tarefas.pop(indice - 1) para remover e guardar
           a tarefa removida ao mesmo tempo.
-        - Exiba uma mensagem confirmando qual tarefa foi removidaagit add.
+        - Exiba uma mensagem confirmando qual tarefa foi removida.
     """
     # TODO (Aula 2): valide o índice recebido
     # TODO (Aula 2): remova a tarefa da lista usando pop()
